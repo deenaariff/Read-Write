@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>          // std::stack
 #include <fstream>
+#include <istream>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ void parseFile (const string fileUrl, stack<*char>& fileContents) {
 	char* character;
 	file.open(fileUrl);
 	while (file.good()) {
-		(getline(file, character))? fileContents.push(character) : break;
+		(fstream::getline(file, character))? fileContents.push(character) : break;
 		cout << character << endl; // TESTING
 	}
 }
